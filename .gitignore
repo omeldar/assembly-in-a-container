@@ -1,0 +1,13 @@
+# Ignore all, this has been made to ignore the executables
+*
+# Dont ignore directories
+!/**/
+
+# Dont ignore files with names and endings
+!*.*
+
+# Dont ignore the Dockerfile
+!Dockerfile
+
+# Ignore compiled assembly files (.o)
+*.o

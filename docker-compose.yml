@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  ass_dbg:
+    container_name: assembly_env
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/app
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp=unconfined
+    restart: no
