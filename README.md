@@ -2,6 +2,8 @@
 
 This is a template to compile, debug and run assembly code in a Docker container.
 
+To test your setup, you can use the included `project.asm` file, which contains a simple "Hello World" application written in Assembly. Attempt to execute it within the container to verify that your environment is functioning correctly. You can find the exact commands in the section *1.1 Setup Example* after *1. Setup*.
+
 ## Setup
 
 1. Start the Docker container by using following command:
@@ -32,9 +34,12 @@ ld -o <target_executable> <your_obj_file>.o
 
 ### Setup Example
 
-To setup the example **Hello World** you can find in the `project.asm`, follow the steps below:
+In this repository there already is a `project.asm`, which is a Hello World application written in Assembly. You can test if your setup works, by using the `project.asm` and run it within the container:
 
 1. `docker-compose run --rm ass_dbg`
+
+    *After this command, you’ll see that your console is attached to the container’s console. So the below commands are being executed in the container.*
+
 2. `nasm -f elf64 -o hello.o project.asm`
 3. `ld -o hello hello.o`
 4. `./hello`
